@@ -68,9 +68,10 @@ print(favNumber)
 ## Question 4
 
 Print each character in the string `"Hello world!"`
-
-
-
+```
+let strng = "Hello world!"
+print(strng)
+```
 ## Question 5
 
 Print out the last character in the string below.  You cannot use the Character literal "!" (i.e you must access `myStringSeven`'s characters).
@@ -124,29 +125,55 @@ var characters = [Character](word)
 Build five pairs of **canonically equivalent** strings, the first of each being a pre-composed character and the second being one that uses combinable unicode scalars. Show that they are equivalent.
 ```
 var combiUnicode = "\u{0061}\u{0300} "
-var preComposed = à
+var preComposed = "à"
 
 print(combiUnicode == preComposed)
 
+
+var combiUnicode1 = "\u{0065}\u{00A8}"
+var preComposed1 = ë
+
+print(combiUnicode1 == preComposed1)
+
+
+var combiUnicode2 = "\u{0041}\u{00B4}"
+var preComposed2 = "Á"
+
+print(combiUnicode2 == preComposed2)
+
+var combiUnicode3 = "\u{00A8}\u{0045}"
+var preComposed3 = "Ë"
+
+print(combiUnicode3 == preComposed3)
+
 ```
-
-
-
 ***
 ## Question 9
 
 **Using only Unicode**, print out `"HELLO WORLD!"`
+```
+var helloWorld = "\u{0048}"+"\u{0065}"+"\u{006c}"+"\u{006c}"+"\u{006f}"+"\u{0020}"+"\u{0057}"+"\u{006f}"+"\u{0072}"+"\u{006c}"+"\u{0064}"+"\u{0021}"
 
+print(helloWorld)
+```
 ***
 ## Question 10
 
 **Using only Unicode**, print out your name.
+```
+var myName = "\u{004e}\u{0065}\u{0065}\u{006d}\u{0061}"
 
+print(myName)
+```
 ***
 ## Question 11
 
 **Using only Unicode**, print out `"HELLO WORLD!"` in another language.
+```
+var holaMundo = "\u{0048}\u{004f}\u{004c}\u{0041} \u{004d}\u{0055}\u{004e}\u{0044}\u{004f}"
 
+print(holaMundo)
+```
 ***
 ## Question 12
 
@@ -169,7 +196,21 @@ Flower Box:
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 - - - - - - - - - - -
 ```
+```
+var flower = "\u{2698}"
+var verticalSymbol = "\u{007c}"
+var horizantalSymbol = "\u{005f} "
+let outline = String(repeating: horizantalSymbol, count: 11)
+print(outline)
 
+for _ in 1...7 {
+for _ in 1...5 {
+print("\(verticalSymbol) \(flower)", terminator: " ")
+}
+print(verticalSymbol)
+}
+print(outline)
+```
 ***
 ## Question 13
 
@@ -186,6 +227,38 @@ Chess Board:
 ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
 ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
 ```
+```
+let  piece = "\u{2656}  \u{2658}  \u{2657}  \u{2655}  \u{2654}  \u{2657}  \u{2658}  \u{2656}"
+
+
+let piece1 = "\u{2659}  \u{2659}  \u{2659}  \u{2659}  \u{2659}  \u{2659}  \u{2659}  \u{2659}"
+
+
+let piece2 = "\u{265F}  \u{265F}  \u{265F}  \u{265F}  \u{265F}  \u{265F}  \u{265F}  \u{265F}"
+
+
+let piece3 = "\u{265C}  \u{265E}  \u{265D}  \u{265B}  \u{265A}  \u{265D}  \u{265E}  \u{265C}"
+
+
+for i in 1...8 {
+    if i == 1 {
+        print(piece)
+        }
+    else if i == 2 {
+        print(piece2)
+        }
+    else if i == 7{
+        print(piece3)
+        }
+    else if i == 8{
+        print(piece4)
+    } else {
+        print ("")
+    }
+}
+
+```
+
 
 ***
 ## Question 14
@@ -197,6 +270,7 @@ var aString = "Replace the letter e with \*"
 // Your code here
  ```
 
+
 Example:
 
 Input:
@@ -204,6 +278,12 @@ Input:
 
 Expected values:
 `replacedString = "R*plac* th* l*tt*r * with *"`
+
+```
+var aString = "Replace the letter e with *"
+var replacedString = aString.replacingOccurrences(of: "e", with: "*")
+print(replacedString)
+```
 
 ***
 ## Question 15
@@ -223,7 +303,14 @@ Input:
 
 Output:
 `"olleH"`
-
+```
+var aString: String = "this string has 29 characters"
+let aStringArr = aString.split(separator: " ")
+let reverseArr = (aString.reversed())
+for word in reverseArr {
+    print(word, terminator: " ")
+}
+```
 ***
 ## Question 16
 
@@ -278,7 +365,14 @@ on
 separate
 lines
 ```
-
+```
+var problem = "split this string into words and print them on separate lines"
+var problemArr = problem.split(separator: " ")
+    print(problemArr)
+for i in problemArr {
+    print(i)
+}
+``` 
 ***
 ## Question 18
 
